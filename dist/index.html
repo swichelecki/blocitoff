@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="blocitoff">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Blocitoff</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    
+    <ui-view></ui-view>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script>
+    // Initialize the Firebase SDK
+    var config = {
+    apiKey: 'AIzaSyBwosYfOa9YeTtrOWcv2gIXuwCXkSjAgd4',
+    authDomain: 'blocitoff-db035.firebaseapp.com',
+    databaseURL: 'https://blocitoff-db035.firebaseio.com',
+    storageBucket: 'blocitoff-db035.appspot.com',
+    messagingSenderId: '343516155226'    
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/LandingCtrl.js"></script>
+</body>
+</html>
