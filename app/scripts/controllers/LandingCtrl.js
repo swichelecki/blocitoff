@@ -3,25 +3,30 @@
         var ref = firebase.database().ref();
         var task = $firebaseArray(ref); 
         
-        task.$add({ value: "Pet Nigel" }).then(function(ref) {
+       /* task.$add({ value: "Feed Nigel" }).then(function(ref) {
             var id = ref.key;
             console.log("added record with id " + id);
             console.log(task.$indexFor(id));
-        });
+        }); */
         
-        //task.$destroy(33);
+         /* task.$loaded()
+            .then(function() {
+            task.$remove(0);
+        }) */
         
-        for (var i = 0; i < task.length; i++) {
-             task.$remove(i);
-    
-        }
+        task.$loaded().then(function() {
+            task[1].value = "Clean Nigel's litter box";
+            task.$save(0);
+        }); 
         
-        //task.$remove();
-        //task[3].value = "good";
-        //task.$save(3);
-        //task[3].value = "good";
-        //task.$save(3);
-        
+   
+          /*  task.$loaded()  // get array from data base then run callbacks
+              .then(function() {
+                for (var i = 0; i < task.length; i++) {
+                    task.$remove(i);
+                }
+              })  */
+            
         $scope.task = task;
     }
  
