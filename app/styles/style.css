@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: 'Open Sans'
+}
+
+.absolute-container {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    height: 29rem;
+    width: 20rem;
+    
+}
+
+.header {
+    position: relative;
+    width: 20rem;
+    background-color: #cbcbcb;
+    height: 4rem;
+}
+
+.body-container {
+    position: relative;
+    width: 20rem;
+    background-color: #dedede;
+    height: 25rem;
+    
+} 
+
+.app-title {
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    
+}
+
+.task-item {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 20rem;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #dedede;
+}

@@ -1,4 +1,9 @@
-<section>
-    <h1>Hello, World!</h1>
-    <div ng-repeat="item in task">{{ item.value }}</div>
-</section>
+
+<section class="absolute-container">
+    <section class="header">
+        <div class="app-title">Current Tasks</div>
+    </section>
+    <section class="body-container">
+        <div class="task-item" ng-repeat="item in task">{{ item.value }}</div>
+    </section>
+</section>    

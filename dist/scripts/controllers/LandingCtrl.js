@@ -9,13 +9,13 @@
             console.log(task.$indexFor(id));
         }); */
         
-         /* task.$loaded()
+        /*  task.$loaded()
             .then(function() {
-            task.$remove(0);
+            task.$remove(2);
         }) */
         
         task.$loaded().then(function() {
-            task[1].value = "Clean Nigel's litter box";
+            task[0].value = "Brush Nigel";
             task.$save(0);
         }); 
         
