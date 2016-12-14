@@ -4,6 +4,10 @@
         <div class="app-title">Current Tasks</div>
     </section>
     <section class="body-container">
-        <div class="task-item" ng-repeat="item in task">{{ item.value }}</div>
+        <div class="task-item" ng-hide="item.hide" ng-repeat="item in task track by $index">{{ item.value }}
+            <a class="task-icon" ng-click="hide(item)">
+                <span class="ion-ios-checkmark-outline"></span>
+            </a>
+        </div>
     </section>
 </section>    
