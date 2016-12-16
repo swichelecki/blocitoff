@@ -1,11 +1,15 @@
 
 <section class="absolute-container">
+    <section class="task-toggle">
+        <a ui-sref="past">Task history</a>
+        <a ui-sref="landing" class="task-active">Active tasks</a>
+    </section>
     <section class="header">
         <div class="app-title">Current Tasks</div>
     </section>
     <section class="body-container">
-        <div class="task-item" ng-hide="item.hide" ng-repeat="item in task track by $index">{{ item.value }}
-            <a class="task-icon" ng-click="hide(item)">
+        <div class="task-item" ng-hide="item.hide" ng-repeat="item in landing.taskObj.task track by $index">{{ item.value }}
+            <a class="task-icon" ng-click="landing.taskObj.hide(item)">
                 <span class="ion-ios-checkmark-outline"></span>
             </a>
         </div>

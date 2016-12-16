@@ -54,10 +54,40 @@ body {
     border-bottom: 1px solid #dedede;
 }
 
+.task-item-finished {
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 20rem;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #dedede;
+    text-decoration: line-through;
+}
+
 .task-icon {
     float:right;
     padding-right: 1rem;
     margin-top: -.5rem;
     font-size: 30px;
     cursor: pointer;
+}
+
+.task-toggle {
+    height: 1.5rem;
+    font-size: 15px;
+    text-align: right;
+}
+
+.task-toggle a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.task-toggle a:first-child {
+    padding-right: 1rem;
+}
+
+.task-toggle .task-active {
+    text-decoration: underline;
 }

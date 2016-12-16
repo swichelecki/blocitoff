@@ -1,0 +1,14 @@
+
+<section class="absolute-container">
+    <section class="task-toggle">
+        <a ui-sref="past" class="task-active">Task history</a>
+        <a ui-sref="landing">Active tasks</a>
+    </section>
+    <section class="header">
+        <div class="app-title">Task History</div>
+    </section>
+    <section class="body-container">
+        <div class="task-item-finished" ng-show="item.hide" ng-repeat="item in past.taskObj.task track by $index">{{ item.value }}
+        </div>
+    </section>
+</section>    

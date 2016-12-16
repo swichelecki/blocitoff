@@ -11,8 +11,15 @@
                 url: '/',
                 controller: 'LandingCtrl as landing',
                 templateUrl: '/templates/landing.html'
+            })
+            .state('past', {
+                url: '/past',
+                controller: 'PastCtrl as past',
+                templateUrl: '/templates/past.html'
+            
         });
-    }
+        
+        }
     
     angular
         .module('blocitoff', ['ui.router', 'firebase'])
