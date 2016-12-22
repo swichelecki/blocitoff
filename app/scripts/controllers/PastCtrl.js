@@ -1,13 +1,13 @@
 (function() {
-    function PastCtrl(Tasks) {
+    function PastCtrl($scope, Tasks) {
         
-        this.taskObj = Tasks;
+        $scope.taskObj = Tasks;
             
     }
     
     
     angular
         .module('blocitoff')
-        .controller('PastCtrl', ['Tasks', PastCtrl]);
+        .controller('PastCtrl', ['$scope', 'Tasks', PastCtrl]);
     
 })();

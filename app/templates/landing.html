@@ -7,10 +7,33 @@
     <section class="header">
         <div class="app-title">Current Tasks</div>
     </section>
+    <section class="task-setup">
+        <div class="task-description">
+            <span class="task-d">Task description</span>
+            <span class="task-p">Priority</span>
+        </div>  
+        <div class="enter-task">
+            <input type="text" class="input" ng-model="taskObj.valu" ng-init="taskObj.valu='Add task'" onfocus="value=''">
+        </div>
+       <div class="priority slate">
+           <select ng-model="taskObj.select">
+                <option value="">select</option>
+                <option value="0">high</option>
+                <option value="1">medium</option>
+                <option value="2">low</option> 
+            </select> 
+        </div>
+        <div class="add-button">
+            <a class="add-task" ng-click="taskObj.taskFunc(taskObj.valu, taskObj.select)">
+                <span>Add</span>
+            </a> 
+        </div>
+    </section>
     <section class="body-container">
-        <div class="task-item" ng-hide="item.hide" ng-repeat="item in landing.taskObj.task track by $index">{{ item.value }}
-            <a class="task-icon" ng-click="landing.taskObj.hide(item)">
-                <span class="ion-ios-checkmark-outline"></span>
+        <div class="task-item" ng-hide="item.hide" ng-repeat="item in taskObj.task | reverse | orderBy: 'select' track by $index">
+            {{ item.value }}
+            <a class="task-icon" ng-click="taskObj.hide(item)">
+                <span ng-style="taskObj.checkbox(item)" class="ion-ios-checkmark-outline"></span>
             </a>
         </div>
     </section>

@@ -1,13 +1,13 @@
 (function() {
-    function LandingCtrl(Tasks) {
-        
-        this.taskObj = Tasks;
+    function LandingCtrl($scope, Tasks) {
+    
+        $scope.taskObj = Tasks;
         
     }
     
     
     angular
         .module('blocitoff')
-        .controller('LandingCtrl', ['Tasks', LandingCtrl]);
+        .controller('LandingCtrl', ['$scope', 'Tasks', LandingCtrl]);
     
 })();

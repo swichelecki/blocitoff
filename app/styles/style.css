@@ -38,6 +38,14 @@ body {
     
 } 
 
+.body-container-past {
+    position: relative;
+    width: 20rem;
+    background-color: #dedede;
+    height: 29.6rem;
+    
+} 
+
 .app-title {
     font-size: 1.5rem;
     padding-left: 1rem;
@@ -65,11 +73,19 @@ body {
 }
 
 .task-icon {
-    float:right;
+    float: right;
     padding-right: 1rem;
     margin-top: -.5rem;
-    font-size: 30px;
+    /*background-color:pink;*/
+}
+
+.task-icon .ion-ios-checkmark-outline {
+    display: inline-block;
     cursor: pointer;
+    border-radius: 50% 50%;
+    font-size: 30px;
+    width: 25px;
+    height: 25px;
 }
 
 .task-toggle {
@@ -90,4 +106,93 @@ body {
 
 .task-toggle .task-active {
     text-decoration: underline;
+}
+
+.task-description {
+    background-color: #dedede;
+    padding-bottom: .2rem;
+}
+
+.task-d {
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 1rem;
+}
+
+.task-p {
+    display: inline-block;  
+    font-size: 12px;
+    margin-left: 4rem;
+    padding-right: 4rem;
+}
+
+.task-setup {
+    /*height: 4.6rem;*/
+}
+
+.enter-task {
+    display: inline-block;
+    background-color:  #f0f0f0;
+    border-right: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin-right: -4px;
+    height: 3rem;
+    width: 10.5rem;
+}
+
+.priority {
+    display: inline-block;
+    background-color:  #f0f0f0;
+    border-bottom: 1px solid #dedede;
+    margin-right: -4px;
+    width: 5.5rem;
+    height: 3rem;
+}
+
+.add-button {
+    display: inline-block;
+    height: 3rem;
+    width: 3.9rem;
+    background-color: #4a4a4a;
+    border-bottom: 1px solid #4a4a4a;
+    text-align: center;
+    padding-top: .9rem;
+    color: white;
+    cursor: pointer;
+}
+
+.input {
+    border: none;
+    width: 9rem;
+    margin-left: 1rem;
+    margin-top: .8rem;
+    padding-right: -1rem;
+    background-color: #f0f0f0;
+    color: #999;
+    outline-width: 0;
+}
+
+.priority .select {
+    background: transparent;
+    border: none;
+}
+
+.priority.slate {  
+    
+}
+
+.priority.slate select {
+    border: none;
+    height: 2rem;
+    margin-top: .6rem;
+    background-color: #f0f0f0;
+    color: #999;
+    outline-width: 0;
+
+}
+
+.ion-ios-checkmark-outline:before{
+    display: block;
+    margin: -2px 0 0 1px;
+
 }
