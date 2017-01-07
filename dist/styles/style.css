@@ -132,7 +132,7 @@ body {
 
 .enter-task {
     display: inline-block;
-    background-color:  #f0f0f0;
+    background-color: #f0f0f0;
     border-right: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
     margin-right: -4px;
@@ -142,7 +142,7 @@ body {
 
 .priority {
     display: inline-block;
-    background-color:  #f0f0f0;
+    background-color: #f0f0f0;
     border-bottom: 1px solid #dedede;
     margin-right: -4px;
     width: 5.5rem;
@@ -157,8 +157,21 @@ body {
     border-bottom: 1px solid #4a4a4a;
     text-align: center;
     padding-top: .9rem;
+    padding-bottom: .7rem;
     color: white;
     cursor: pointer;
+}
+
+.add-button a:active {
+    background-color: white !important;
+    color: black;
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    padding-top: .9rem;
+    padding-bottom: .7rem;
+    padding-right: 1rem;
+    padding-left: 1.1rem;
+    
 }
 
 .input {

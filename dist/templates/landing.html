@@ -30,9 +30,10 @@
         </div>
     </section>
     <section class="body-container">
-        <div class="task-item" ng-hide="item.hide" ng-repeat="item in taskObj.task | reverse | orderBy: 'select' track by $index">
-            {{ item.value }}
-            <a class="task-icon" ng-click="taskObj.hide(item)">
+        <div ng-repeat="class="task-item" ng-hide="item.hide" item in taskObj.task | reverse | orderBy: 'select' track by $index">   
+            {{item.value}}
+            <!-- <task-complete item="{{ item }}"></task-complete>  -->
+            <a class="task-icon" ng-click="taskObj.hide(item)">  
                 <span ng-style="taskObj.checkbox(item)" class="ion-ios-checkmark-outline"></span>
             </a>
         </div>

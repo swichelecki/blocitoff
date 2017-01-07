@@ -20,8 +20,10 @@
         * @param {Object} array index
         */
         var saveTask = function(item) {
+            console.log("Item sent to saveTask: " + item);
+            console.log(item);
             task.$save(item); 
-                
+        
         };
         
         /**
@@ -32,6 +34,8 @@
         
         // TODO: Remove before production
         //var EXPIRATION = 3000;
+       
+        var state = null;
        
         /**
         * @function addTask
@@ -48,12 +52,14 @@
                 expirationDate: end,
                 value: value,
                 select: select,
-                hide: false
+                hide: false,
+                state: state
             }).then(function(ref) {
                 var id = ref.key;
                 console.log("added record with id " + id);
                 console.log("the index of the record is " + task.$indexFor(id));
                 console.log(time, end, value, "priority is " + select);
+                console.log("state: " + state);
             });
             
         };
@@ -104,7 +110,7 @@
         * @desc limits the number of completed tasks to eight
         * @param {Object} task
         */
-        function taskLimit() {
+      /*  function taskLimit() {
          if (task.length > 8) {
              for (var i = 0; i < task.length; i--) {
                  if (task[i].hide) {
@@ -126,7 +132,7 @@
         
         /** remove selected index */
        
-        /*  task.$loaded()
+        /**  task.$loaded()
             .then(function() {
             task.$remove(2);
         }) */
@@ -161,9 +167,13 @@
         * @param {Object} array index
         */
         Tasks.hide = function(item) {
-            item.hide = true;
-            saveTask(item);
-            
+             item.hide = true; /*remove for directive*/ 
+             item.state = "complete"; /*remove for directive*/
+            if (typeof item !== 'object') {
+                item = JSON.parse(item);    
+            }
+            console.log("Hiding task from service", item);
+            saveTask(item); 
         };
        
        /*
@@ -175,6 +185,7 @@
            if (select == null) {
                 alert("You must enter a priority!");
            } else {
+                state = "incomplete";
                 addTask(value, select);
            }
        }; 
