@@ -20,8 +20,6 @@
         * @param {Object} array index
         */
         var saveTask = function(item) {
-            console.log("Item sent to saveTask: " + item);
-            console.log(item);
             task.$save(item); 
         
         };
@@ -55,7 +53,7 @@
                 hide: false,
                 state: state
             }).then(function(ref) {
-                var id = ref.key;
+                var id = ref.key;                
                 console.log("added record with id " + id);
                 console.log("the index of the record is " + task.$indexFor(id));
                 console.log(time, end, value, "priority is " + select);
@@ -83,47 +81,6 @@
         task.$loaded().then(function() {
             setInterval(checkExpirations, 3000);
         });
-       
-       
-        /*
-        * @function taskLimit
-        * @desc limits the number of completed tasks to eight
-        * @param {Object} task
-        */
-        /*function activeTaskLimit() {
-            if (task.length > 7) {
-                for (var i = 0; i < task.length; i++) {
-                    if (task[i].hide === false) {
-                        alert("You must complete one task before adding more!");
-                        task.$remove(task[i]);    
-                  }
-              }
-         }
-        }
-         
-        task.$loaded().then(function() {
-           setInterval(activeTaskLimit, 3000); 
-       }); */
-       
-        /*
-        * @function taskLimit
-        * @desc limits the number of completed tasks to eight
-        * @param {Object} task
-        */
-      /*  function taskLimit() {
-         if (task.length > 8) {
-             for (var i = 0; i < task.length; i--) {
-                 if (task[i].hide) {
-                     task.$remove(task[i]);    
-                  }
-              }
-         }
-        }
-       
-        task.$loaded().then(function() {
-           setInterval(taskLimit, 3000); 
-        }); 
-    
         
        /** TESTING **/
          
@@ -146,7 +103,7 @@
         
         /* remove all indexes in array */  
                 
-        /* task.$loaded()  
+        /*task.$loaded()  
           .then(function() {
             for (var i = 0; i < task.length; i++) {
                     task.$remove(task[i]);    
@@ -166,13 +123,11 @@
         * @desc hides task from view and calls saveTask()
         * @param {Object} array index
         */
-        Tasks.hide = function(item) {
-             item.hide = true; /*remove for directive*/ 
-             item.state = "complete"; /*remove for directive*/
-            if (typeof item !== 'object') {
-                item = JSON.parse(item);    
-            }
+        Tasks.hideFinal = function(item, state) {
+            item.hide = true;
+            item.state = state;
             console.log("Hiding task from service", item);
+           
             saveTask(item); 
         };
        
@@ -185,7 +140,7 @@
            if (select == null) {
                 alert("You must enter a priority!");
            } else {
-                state = "incomplete";
+                state = "active";
                 addTask(value, select);
            }
        }; 

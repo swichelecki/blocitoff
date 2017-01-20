@@ -1,10 +1,16 @@
-    <div class="task-item" ng-hide="item.hide"> 
-        
-        <a class="task-icon" ng-click="hideTem()"> 
-            {{ rowValue }}
-            <span class="ion-ios-checkmark-outline"></span>
+
+        <a class="task-icon" ng-click="stateChange(item)"> 
+            <span class=""></span>
         </a>
-    </div>
+
+    
+
+ <!-- <div class="task-item" ng-hide="item.hide" ng-repeat="item in taskObj.task | reverse | orderBy: 'select' track by $index">
+            {{ item.value }}
+            <a class="task-icon" ng-click="taskObj.hide(item)">
+                <span ng-style="taskObj.checkbox(item)" class="ion-ios-checkmark-outline"></span>
+             </a>
+</div>
 
 
 <!-- ng-style="checkbox($event)" -->
